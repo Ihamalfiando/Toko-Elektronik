@@ -1,0 +1,179 @@
+body {
+  background-color: #f5f7fa;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Hero Section */
+.hero-section {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e0e7ef 0%, #f5f7fa 100%);
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
+.hero-img {
+  max-width: 90%;
+  box-shadow: 0 6px 40px rgba(0,0,0,0.07);
+  border-radius: 24px;
+  animation: float 5s ease-in-out infinite;
+}
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+/* Produk Section */
+#produk {
+  padding-bottom: 80px;
+  padding-top: 60px;
+}
+.produk-card {
+  transition: transform 0.22s cubic-bezier(.17,.67,.83,.67), box-shadow 0.22s;
+  cursor: pointer;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+}
+.produk-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(49, 117, 255,.10);
+  border-color: #0d6efd33;
+  z-index: 2;
+}
+.produk-img {
+  height: 220px;
+  object-fit: cover;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+.btn-beli:active {
+  transform: scale(0.97);
+  background: #0d6efd;
+  color: #fff;
+}
+
+/* Animasi on scroll */
+.animate-fade, .animate-fade-delay, .animate-fade-img, .animate-up, .animate-left, .animate-right {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.7s cubic-bezier(.23,1.15,.32,1.18);
+  will-change: opacity, transform;
+}
+.animate-fade.animate-visible,
+.animate-fade-delay.animate-visible,
+.animate-fade-img.animate-visible,
+.animate-up.animate-visible,
+.animate-left.animate-visible,
+.animate-right.animate-visible {
+  opacity: 1;
+  transform: none;
+}
+.animate-fade-delay {
+  transition-delay: .2s;
+}
+.animate-fade-img {
+  transition-delay: .3s;
+}
+.animate-up {
+  transform: translateY(40px);
+}
+.animate-left {
+  transform: translateX(-40px);
+}
+.animate-right {
+  transform: translateX(40px);
+}
+
+/* CTA Newsletter */
+.cta-section {
+  background: linear-gradient(120deg, #1064e6 60%, #0d48a8 100%);
+  border-radius: 0 0 32px 32px;
+}
+.cta-section input[type="email"] {
+  border-radius: 8px;
+  border: none;
+}
+.cta-section input[type="email"]:focus {
+  outline: 2px solid #0d6efd;
+  box-shadow: 0 0 0 0.2rem #0d6efd44;
+}
+.cta-section .btn {
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* Footer */
+footer {
+  background: #232946;
+  color: #fff;
+  font-size: 1rem;
+}
+.footer-link {
+  color: #bfcbe3;
+  text-decoration: none;
+  transition: color 0.17s;
+}
+.footer-link:hover {
+  color: #fff;
+}
+.footer-social {
+  color: #bfcbe3;
+  font-size: 1.6rem;
+  transition: color 0.19s, transform 0.22s;
+  display: inline-block;
+}
+.footer-social:hover {
+  color: #1064e6;
+  transform: scale(1.1) rotate(-6deg);
+}
+
+/* Back To Top Button */
+.back-to-top-btn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 1100;
+  display: none;
+  width: 52px;
+  height: 52px;
+  font-size: 1.7rem;
+  box-shadow: 0 4px 24px rgba(49,117,255,.12);
+  transition: background 0.22s, box-shadow 0.18s, transform 0.19s;
+}
+.back-to-top-btn:hover {
+  background: #1064e6;
+  transform: translateY(-4px) scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+  .hero-section {
+    min-height: 60vh;
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+  .produk-img {
+    height: 180px;
+  }
+  .cta-section {
+    border-radius: 0 0 20px 20px;
+  }
+}
+@media (max-width: 767.98px) {
+  .hero-section, #produk, #tentang {
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+  .produk-img {
+    height: 140px;
+  }
+  .footer-social {
+    font-size: 1.3rem;
+  }
+  .back-to-top-btn {
+    right: 16px;
+    bottom: 16px;
+    width: 44px;
+    height: 44px;
+  }
+}
